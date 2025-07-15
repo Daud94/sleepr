@@ -1,0 +1,61 @@
+steps:
+  #  Reservations
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build',
+      '-t',
+      'us-east4-docker.pkg.dev/proven-dialect-465210-u6/reservations/production',
+      '-f',
+      'apps/reservations/Dockerfile'
+      '.'
+    ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'push',
+      'us-east4-docker.pkg.dev/proven-dialect-465210-u6/reservations/production',
+    ]
+  # Auth
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build',
+      '-t',
+      'us-east4-docker.pkg.dev/proven-dialect-465210-u6/auth/production',
+      '-f',
+      'apps/auth/Dockerfile'
+      '.'
+    ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'push',
+      'us-east4-docker.pkg.dev/proven-dialect-465210-u6/auth/production',
+    ]
+  # Notifications
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build',
+      '-t',
+      'us-east4-docker.pkg.dev/proven-dialect-465210-u6/notifications/production',
+      '-f',
+      'apps/notifications/Dockerfile'
+      '.'
+    ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'push',
+      'us-east4-docker.pkg.dev/proven-dialect-465210-u6/notifications/production',
+    ]
+  # Payments
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build',
+      '-t',
+      'us-east4-docker.pkg.dev/proven-dialect-465210-u6/payments/production',
+      '-f',
+      'apps/payments/Dockerfile'
+      '.'
+    ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'push',
+      'us-east4-docker.pkg.dev/proven-dialect-465210-u6/payments/production',
+    ]
