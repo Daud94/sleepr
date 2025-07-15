@@ -21,7 +21,7 @@ steps:
       '-t',
       'us-east4-docker.pkg.dev/proven-dialect-465210-u6/auth/production',
       '-f',
-      'apps/auth/Dockerfile'
+      'apps/auth/Dockerfile',
       '.'
     ]
   - name: 'gcr.io/cloud-builders/docker'
@@ -36,7 +36,7 @@ steps:
       '-t',
       'us-east4-docker.pkg.dev/proven-dialect-465210-u6/notifications/production',
       '-f',
-      'apps/notifications/Dockerfile'
+      'apps/notifications/Dockerfile',
       '.'
     ]
   - name: 'gcr.io/cloud-builders/docker'
@@ -51,7 +51,7 @@ steps:
       '-t',
       'us-east4-docker.pkg.dev/proven-dialect-465210-u6/payments/production',
       '-f',
-      'apps/payments/Dockerfile'
+      'apps/payments/Dockerfile',
       '.'
     ]
   - name: 'gcr.io/cloud-builders/docker'
