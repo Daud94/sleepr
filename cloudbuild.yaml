@@ -1,5 +1,5 @@
 steps:
-  #  Reservations yaml
+  #  Reservations
   - name: 'gcr.io/cloud-builders/docker'
     args: [
       'build',
